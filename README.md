@@ -2,6 +2,10 @@
 
 A production-ready SaaS starter template built with Next.js 14, featuring multi-tenancy, authentication, payments, and more.
 
+<div align="center">
+  <img src="SaaS Template.png" alt="SaaS Template" />
+</div>
+
 ## Core Features
 
 - Multi-tenancy via subdomains
@@ -16,15 +20,18 @@ A production-ready SaaS starter template built with Next.js 14, featuring multi-
 
 1. Clone the repository
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Set up environment variables:
+
    - Copy `.env.example` to `.env.local`
    - Fill in your Supabase and Stripe credentials
 
 4. Run the development server:
+
    ```bash
    npm run dev
    ```
