@@ -70,3 +70,40 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Minimal replacements for tailwindcss-animate utilities used by UIs.
+   These provide small, accessible motion defaults. */
+
+@keyframes ta-fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes ta-fade-out {
+  from { opacity: 1 }
+  to { opacity: 0 }
+}
+
+@keyframes ta-slide-in-up {
+  from { transform: translateY(0.5rem); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+@keyframes ta-slide-in-down {
+  from { transform: translateY(-0.5rem); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+@keyframes ta-scale-in {
+  from { transform: scale(.96); opacity: 0 }
+  to { transform: scale(1); opacity: 1 }
+}
+
+@layer components {
+  .animate-fade-in { animation: ta-fade-in 200ms cubic-bezier(.16,.84,.44,1) both; }
+  .animate-fade-out { animation: ta-fade-out 160ms cubic-bezier(.16,.84,.44,1) both; }
+  .animate-slide-in-up { animation: ta-slide-in-up 240ms cubic-bezier(.16,.84,.44,1) both; }
+  .animate-slide-in-down { animation: ta-slide-in-down 240ms cubic-bezier(.16,.84,.44,1) both; }
+  .animate-scale-in { animation: ta-scale-in 200ms cubic-bezier(.16,.84,.44,1) both; }
+}
+

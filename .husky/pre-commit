@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint-staged
-npm test
+# Run lint-staged directly using the local binary (avoid relying on npm script visibility)
+npx --no-install lint-staged
+
+# Run tests, but don't fail the hook if there are no tests present
+npm test -- --passWithNoTests
